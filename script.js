@@ -1,5 +1,5 @@
 const validatePassword4 = (password) => {
-  const characters = /^(?=.*[!@#])(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{3,10}$/;
+  const characters = /^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{3,10}$/;
 
   if (typeof password !== 'string') {
     console.log('Wrong input! Enter string type parameter');
@@ -17,21 +17,17 @@ const validatePassword4 = (password) => {
     )
   ) {
     console.log(
-      'Must contain at least one digit one of the special characters "!","@","#"'
+      'Must contain at least one of the special characters "!","@","#"'
     );
+  }
+  if (!characters.test(password)) {
+    console.log('Must contain at least one digit');
     return;
   }
-
-  // if (!characters.test(password)) {
-  //   console.log(
-  //     'Must contain at least one digit one of the special characters "!","@","#"'
-  //   );
-  //   return;
-  // }
   console.log('Correct password');
 };
 
-const word4 = validatePassword4('ab1!');
+const word4 = validatePassword4('dom!1');
 console.log(word4);
 
 //------------------------------------------------------------
