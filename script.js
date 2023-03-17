@@ -2,11 +2,9 @@ const validatePassword4 = (password) => {
   const characters = /\d/;
 
   if (typeof password !== 'string') {
-    console.log('Wrong input! Enter string type parameter');
     return false;
   }
   if (password.length > 10 || password.length < 3) {
-    console.log('Wrong number of characters');
     return false;
   }
   if (
@@ -16,16 +14,11 @@ const validatePassword4 = (password) => {
       password.includes('#')
     )
   ) {
-    console.log(
-      'Must contain at least one of the special characters "!","@","#"'
-    );
     return false;
   }
   if (!characters.test(password)) {
-    console.log('Must contain at least one digit');
     return false;
   }
-  console.log('Correct password');
   return true;
 };
 
