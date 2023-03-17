@@ -1,5 +1,5 @@
 const validatePassword4 = (password) => {
-  const characters = /^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{3,10}$/;
+  const characters = /\d/;
 
   if (typeof password !== 'string') {
     console.log('Wrong input! Enter string type parameter');
