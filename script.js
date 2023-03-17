@@ -1,28 +1,47 @@
 const validatePassword4 = (password) => {
   const characters = /\d/;
 
-  if (typeof password !== 'string') {
-    return false;
-  }
-  if (password.length > 10 || password.length < 3) {
-    return false;
-  }
-  if (
-    !(
+  switch (true) {
+    case typeof password !== 'string':
+      return false;
+
+    case password.length > 10 || password.length < 3:
+      return false;
+
+    case !(
       password.includes('!') ||
       password.includes('@') ||
       password.includes('#')
-    )
-  ) {
-    return false;
-  }
-  if (!characters.test(password)) {
-    return false;
-  }
-  return true;
-};
+    ):
+      return false;
 
-const word4 = validatePassword4('asd@2');
+    case !characters.test(password):
+      return false;
+
+    default:
+      return true;
+  }
+};
+// if (typeof password !== 'string') {
+//   return false;
+// }
+// if (password.length > 10 || password.length < 3) {
+//   return false;
+// }
+// if (
+//   !(
+//     password.includes('!') ||
+//     password.includes('@') ||
+//     password.includes('#')
+//   )
+// ) {
+//   return false;
+// }
+// if (!characters.test(password)) {
+//   return false;
+// }
+
+const word4 = validatePassword4();
 console.log(word4);
 
 //------------------------------------------------------------
