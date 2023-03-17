@@ -9,12 +9,25 @@ const validatePassword4 = (password) => {
     console.log('Wrong number of characters');
     return;
   }
-  if (!characters.test(password)) {
+  if (
+    !(
+      password.includes('!') ||
+      password.includes('@') ||
+      password.includes('#')
+    )
+  ) {
     console.log(
       'Must contain at least one digit one of the special characters "!","@","#"'
     );
     return;
   }
+
+  // if (!characters.test(password)) {
+  //   console.log(
+  //     'Must contain at least one digit one of the special characters "!","@","#"'
+  //   );
+  //   return;
+  // }
   console.log('Correct password');
 };
 
